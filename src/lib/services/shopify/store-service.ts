@@ -153,7 +153,7 @@ export const getStoreData = async ({
 		store = JSON.parse(cookieStore)
 		megamenu = JSON.parse(cookieMegamenu)
 	}
-	storeRes.storeOne = store
+	1.storeOne = store
 	storeRes.megamenu = megamenu
 	return storeRes
 }

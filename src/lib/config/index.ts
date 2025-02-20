@@ -47,10 +47,10 @@ export const mediaqueries = {
 	noanimations: '(prefers-reduced-motion: reduce)'
 }
 // export const provider = env.PUBLIC_API_PROVIDER || 'Litekart' // 'Medusa' 'Woocommerce' 'Bigcommerce'
-export const searchbarText = 'Search for brands categories & more'
+export const searchbarText = 'Search for products'
 export const SHOPIFY_BASE_URL = `https://api.shopify.com`
-export const siteShortTitle = 'Litekart' // used as SchemaOrg siteTitleAlt
-export const siteTitle = 'Litekart'
+export const siteShortTitle = 'Lustra' // used as SchemaOrg siteTitleAlt
+export const siteTitle = 'Lustrashop'
 export const sorts = [
 	{ name: 'Recomended', val: null },
 	{ name: `What's New`, val: '-updatedAt' },

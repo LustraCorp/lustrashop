@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { sveltekit } from '@sveltejs/kit/vite'
 import { defineConfig, loadEnv } from 'vite'
 // import { join } from 'path'
