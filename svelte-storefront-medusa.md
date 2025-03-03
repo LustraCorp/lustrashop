@@ -4,8 +4,10 @@ Follow these steps to create a Svelte storefront from scratch using Medusa:
 
 ## Step-by-Step Guide
 
+### Prerequisites
+- Ensure you have Node.js (version 22.10.0 or higher) and PostgreSQL installed.
+
 ### 1. Set Up Medusa Backend
-- Ensure you have Node.js and PostgreSQL installed.
 - Create a new Medusa project:
   ```bash
   npx create-medusa-app@latest medusa-backend
@@ -29,8 +31,8 @@ Follow these steps to create a Svelte storefront from scratch using Medusa:
 ### 2. Create Svelte Frontend
 - Create a new Svelte project:
   ```bash
-  npx degit sveltejs/template svelte-storefront
-  cd svelte-storefront
+  npx degit sveltejs/template lustrashop-svelte
+  cd lustrashop-svelte
   npm install
   ```
 
@@ -43,7 +45,7 @@ Follow these steps to create a Svelte storefront from scratch using Medusa:
 ### 4. Set Up API Client
 - Create an API client to interact with the Medusa backend:
   ```javascript
-  // filepath: /workspaces/lustrashop/svelte-storefront/src/lib/api.js
+  // filepath: /workspaces/lustrashop/lustrashop-svelte/src/lib/api.js
   import axios from 'axios';
 
   const api = axios.create({
@@ -56,7 +58,7 @@ Follow these steps to create a Svelte storefront from scratch using Medusa:
 ### 5. Create Store for Managing State
 - Create a store to manage the application state:
   ```javascript
-  // filepath: /workspaces/lustrashop/svelte-storefront/src/lib/store.js
+  // filepath: /workspaces/lustrashop/lustrashop-svelte/src/lib/store.js
   import { writable } from 'svelte/store';
 
   export const products = writable([]);
@@ -66,7 +68,7 @@ Follow these steps to create a Svelte storefront from scratch using Medusa:
 ### 6. Fetch Products from Medusa
 - Fetch products from the Medusa backend and update the store:
   ```javascript
-  // filepath: /workspaces/lustrashop/svelte-storefront/src/routes/index.svelte
+  // filepath: /workspaces/lustrashop/lustrashop-svelte/src/routes/index.svelte
   <script>
     import { onMount } from 'svelte';
     import api from '../lib/api';
@@ -91,7 +93,7 @@ Follow these steps to create a Svelte storefront from scratch using Medusa:
 ### 7. Create Cart Functionality
 - Add functionality to manage the shopping cart:
   ```javascript
-  // filepath: /workspaces/lustrashop/svelte-storefront/src/routes/index.svelte
+  // filepath: /workspaces/lustrashop/lustrashop-svelte/src/routes/index.svelte
   <script>
     import { cart } from '../lib/store';
 
