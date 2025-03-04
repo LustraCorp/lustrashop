@@ -45,7 +45,7 @@ Follow these steps to create a Svelte storefront from scratch using Medusa:
 ### 4. Set Up API Client
 - Create an API client to interact with the Medusa backend:
   ```javascript
-  // filepath: /workspaces/lustrashop/lustrashop-svelte/src/lib/api.js
+  // filepath: /c:/Business/projects/lustrashop/lustrashop-svelte/src/lib/api.ts
   import axios from 'axios';
 
   const api = axios.create({
@@ -58,7 +58,7 @@ Follow these steps to create a Svelte storefront from scratch using Medusa:
 ### 5. Create Store for Managing State
 - Create a store to manage the application state:
   ```javascript
-  // filepath: /workspaces/lustrashop/lustrashop-svelte/src/lib/store.js
+  // filepath: /c:/Business/projects/lustrashop/lustrashop-svelte/src/lib/store.ts
   import { writable } from 'svelte/store';
 
   export const products = writable([]);
@@ -68,7 +68,7 @@ Follow these steps to create a Svelte storefront from scratch using Medusa:
 ### 6. Fetch Products from Medusa
 - Fetch products from the Medusa backend and update the store:
   ```javascript
-  // filepath: /workspaces/lustrashop/lustrashop-svelte/src/routes/index.svelte
+  // filepath: /c:/Business/projects/lustrashop/lustrashop-svelte/src/routes/index.svelte
   <script>
     import { onMount } from 'svelte';
     import api from '../lib/api';
@@ -80,20 +80,18 @@ Follow these steps to create a Svelte storefront from scratch using Medusa:
     });
   </script>
 
-  <template>
-    <h1>Products</h1>
-    <ul>
-      {#each $products as product}
-        <li>{product.title} - ${product.price / 100}</li>
-      {/each}
-    </ul>
-  </template>
+  <h1>Products</h1>
+  <ul>
+    {#each $products as product}
+      <li>{product.title} - ${product.price / 100}</li>
+    {/each}
+  </ul>
   ```
 
 ### 7. Create Cart Functionality
 - Add functionality to manage the shopping cart:
   ```javascript
-  // filepath: /workspaces/lustrashop/lustrashop-svelte/src/routes/index.svelte
+  // filepath: /c:/Business/projects/lustrashop/lustrashop-svelte/src/routes/index.svelte
   <script>
     import { cart } from '../lib/store';
 
@@ -110,22 +108,20 @@ Follow these steps to create a Svelte storefront from scratch using Medusa:
     }
   </script>
 
-  <template>
-    <h1>Products</h1>
-    <ul>
-      {#each $products as product}
-        <li>
-          {product.title} - ${product.price / 100}
-          <button on:click={() => addToCart(product)}>Add to Cart</button>
-        </li>
-      {/each}
-    </ul>
+  <h1>Products</h1>
+  <ul>
+    {#each $products as product}
+      <li>
+        {product.title} - ${product.price / 100}
+        <button on:click={() => addToCart(product)}>Add to Cart</button>
+      </li>
+    {/each}
+  </ul>
 
-    <h2>Cart</h2>
-    <ul>
-      {#each $cart as item}
-        <li>{item.title} - {item.quantity}</li>
-      {/each}
-    </ul>
-  </template>
+  <h2>Cart</h2>
+  <ul>
+    {#each $cart as item}
+      <li>{item.title} - {item.quantity}</li>
+    {/each}
+  </ul>
   ```

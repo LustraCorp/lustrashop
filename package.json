@@ -1,6 +1,23 @@
 {
   "dependencies": {
+    "@medusajs/medusa": "2.5.1",
     "create-svelte": "7.0.0",
+    "express": "4.21.2",
     "postgres": "3.4.5"
+  },
+  "devDependencies": {
+    "@types/babel__core": "7.20.5",
+    "@types/babel__generator": "7.6.8",
+    "@types/babel__template": "7.4.4",
+    "@types/babel__traverse": "7.20.6",
+    "@types/express": "5.0.0",
+    "@types/mute-stream": "0.0.4",
+    "@types/pluralize": "0.0.33"
+  },
+  "scripts": {
+    "build": "tsc && svelte-kit build",
+    "dev": "svelte-kit dev",
+    "start": "svelte-kit start",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
   }
 }

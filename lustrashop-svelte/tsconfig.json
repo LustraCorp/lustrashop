@@ -11,7 +11,18 @@
 		"strict": true,
 		"moduleResolution": "node",
 		"target": "es6",
-		"module": "esnext"
+		"module": "esnext",
+		"typeRoots": [
+			"node_modules/@types"
+		],
+		"types": [
+			"babel__core",
+			"babel__generator",
+			"babel__template",
+			"babel__traverse",
+			"mute-stream",
+			"pluralize"
+		]
 	},
 	"include": [
 		"src"
