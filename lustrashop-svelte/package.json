@@ -63,7 +63,7 @@
 		"prettier-plugin-tailwindcss": "^0.6.11",
 		"storybook": "^8.6.3",
 		"svelte": "^5.0.0",
-		"svelte-check": "^4.0.0",
+		"svelte-check": "^4.1.5",
 		"tailwindcss": "^4.0.0",
 		"typescript": "^5.0.0",
 		"typescript-eslint": "^8.20.0",

@@ -1,4 +1,6 @@
 {
+  "name": "lustrashop",
+  "version": "0.0.1",
   "dependencies": {
     "@medusajs/medusa": "2.5.1",
     "create-svelte": "7.0.0",
@@ -12,12 +14,22 @@
     "@types/babel__traverse": "7.20.6",
     "@types/express": "5.0.0",
     "@types/mute-stream": "0.0.4",
-    "@types/pluralize": "0.0.33"
+    "@types/pluralize": "0.0.33",
+    "concurrently": "7.6.0",
+    "ts-node": "10.9.2"
   },
   "scripts": {
-    "build": "tsc && svelte-kit build",
-    "dev": "svelte-kit dev",
+    "build": "vite build",
+    "dev": "concurrently \"npm run start-db-docker\" \"npm run start-medusa\" \"npm run start-svelte\"",
     "start": "svelte-kit start",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+
+    "start-db-docker": "cd lustrashop-svelte && npm run db:start",
+    "start-db-script": "cd lustrashop-medusa && npm run start-db",
+    "start-medusa": "cd lustrashop-medusa && npm run start",
+    "start-svelte": "cd lustrashop-svelte && npm run dev",
+    "build-svelte": "cd lustrashop-svelte && npm run build",
+    "start-svelte-prod": "cd lustrashop-svelte && npm run start-prod",
+    "start-prod": "concurrently \"npm run start-db-docker\" \"npm run start-medusa\" \"npm run start-svelte-prod\""
   }
 }
